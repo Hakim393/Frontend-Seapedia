@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: (import.meta as any).env.VITE_API_BASE_URL || "http://localhost:5000/api",
+  baseURL:
+    (import.meta as any).env.VITE_API_BASE_URL ||
+    "https://backend-seapedia-production.up.railway.app/api",
 });
 
 api.interceptors.request.use(
@@ -23,7 +25,6 @@ api.interceptors.response.use(
     if (error.response?.status === 401) {
       localStorage.removeItem("seapedia_token");
       localStorage.removeItem("seapedia_user");
-      // Optional: window.location.href = "/login" could be handled here or inside AuthContext
     }
     return Promise.reject(error);
   }
