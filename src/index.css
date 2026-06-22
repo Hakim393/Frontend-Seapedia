@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Base Styles & Custom overrides to apply Sophisticated Dark globally */
+body {
+  background-color: #0A0D14;
+  color: #E2E8F0;
+  font-family: var(--font-sans);
+}
+
+/* Force dark theme onto container pages and generic components */
+#homepage-container,
+#seller-products-page,
+#my-store-page,
+#seller-dashboard-page,
+#seller-sidebar,
+#user-sidebar,
+#admin-sidebar,
+#main-navigation {
+  background-color: #0A0D14 !important;
+  color: #F1F5F9 !important;
+  border-color: #1E293B !important;
+}
+
+/* Common generic card fallback */
+.bg-white {
+  background-color: #121824 !important;
+  color: #EDF2F7 !important;
+  border-color: #1E293B !important;
+}
+
+/* Gradients on landing header and visual assets */
+.from-gray-50, .via-white, .to-violet-50\/40 {
+  --tw-gradient-from: #0A0D14 !important;
+  --tw-gradient-to: #111522 !important;
+  --tw-gradient-stops: #05080E, #0E121E !important;
+  background-image: linear-gradient(135deg, #0A0D14 0%, #111522 100%) !important;
+}
+
+/* Card gradients for sophisticated glassmorphism effect */
+.bg-gradient-to-tr, .bg-gradient-to-br, .bg-gradient-to-r {
+  background-image: linear-gradient(135deg, rgba(18, 24, 38, 0.8) 0%, rgba(10, 13, 20, 0.9) 100%) !important;
+}
+
+/* Override grey layouts */
+.bg-gray-50, .bg-gray-100 {
+  background-color: #05070B !important;
+}
+
+/* Borders mapping nicely */
+.border-gray-50, .border-gray-100, .border-gray-200, .border-gray-300 {
+  border-color: #1C2434 !important;
+}
+
+/* Text elements mapping cleanly for contrast readability */
+.text-gray-900, .text-gray-950, .text-gray-800, .text-gray-700 {
+  color: #F8FAFC !important;
+}
+
+.text-gray-600, .text-gray-500 {
+  color: #94A3B8 !important;
+}
+
+.text-black {
+  color: #FFFFFF !important;
+}
+
+/* Form input adjustments */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="url"],
+select,
+textarea {
+  background-color: #05070B !important;
+  color: #F8FAFC !important;
+  border-family: var(--font-mono);
+  border-color: #1E293B !important;
+}
+
+/* Active links state in sidebar */
+.bg-violet-50 {
+  background-color: rgba(139, 92, 246, 0.15) !important;
+  color: #C084FC !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05070B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Utility layout animation */
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Text clamping */
+.limit-text-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.limit-text-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
